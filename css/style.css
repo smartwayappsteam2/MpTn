@@ -1,7 +1,14 @@
 .app {
     background-color: #ebeced;
 }
+.fa {
+    font-size: 12px;
+}
+ul {
 
+    padding: 0px 0px  0px 0px;
+    margin: 0px 0px  0px 0px;
+}
 .productsGrid h6{
     float: left;
 color: black;
