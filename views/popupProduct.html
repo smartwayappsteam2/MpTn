@@ -4,7 +4,9 @@
         <div class="productdetails">
             <img class="productImage" ng-src="{{product.image}}"> </img>
             <div class="productOtherImages">
-
+                <div class="otherProductImageCard" ng-repeat="image in product.images">
+                    <img class="otherProductImage" ng-src="{{image.imageUrl}}"> </img>
+                </div>
             </div>
             <div class="productDescription">
                 Description
@@ -30,12 +32,18 @@
             <div class= "storeTop" >
                 <img class="storeIcon" ng-src="{{product.image}}"> </img>
                 <div class="storeTitle">
-                    More From
+                    <div class="title">More From</div>
+                    <div class="title">HUF</div>
                 </div>
                 <div class="storeLikeButton">Folow</div>
             </div>
 
-            <div class="storeMiddle"></div>
+            <div class="storeMiddle">
+            <div class="storeProductCard" ng-repeat="aProduct in store.products">
+                <img class="storeProductImage" ng-src="{{aProduct.image}}"> </img>
+            </div>
+            </div>
+
             <div class="storeBottom">Ask a Question</div>
 
         </div>

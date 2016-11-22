@@ -1,0 +1,61 @@
+<div class="oneStore">
+    <div class="col-sm-2">
+        <div ng-include="'views/leftMenu.html'"></div>
+    </div>
+
+    <div class="col-sm-10">
+        <div class="storeDetail">
+            <div class="storeDetailHeader">
+                <img ng-src="{{store.headerImg}}"> </img>
+            </div>
+            <div class="storeDetailBottom">
+
+                <div class="storeDetailActions">
+                    <div class="askAQuestion">
+                        ASK A QUESTION
+                    </div>
+                    <img class="storeIcon" ng-src="{{store.iconImg}}">
+
+                    </img>
+
+                    <div class="follow">
+                        Follow
+                    </div>
+
+                    <div class="share">
+                        Share
+                    </div>
+
+
+                </div>
+
+                <div class="storeDetailTitles">
+                    <div class="storeName">
+                        {{store.name}}
+                    </div>
+                    <div class="storeDescription">
+                        {{store.description}}
+                    </div>
+                </div>
+            </div>
+            <div class="storeDetailFooter">
+                <div class="products">Produits</div>
+            </div>
+
+        </div>
+
+        <div class="productsList">
+            <div class="product4XCards xSmall" ng-repeat="product in products" ng-click="showProduct()">
+                <img class="productImg" ng-src="{{product.image }}">
+                <h6>{{product.name}}</h6>
+                <div class="price"> $100</div>
+                <div class="separator"></div>
+                <div class="likeButton"> Like</div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

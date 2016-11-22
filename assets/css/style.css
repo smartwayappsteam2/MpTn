@@ -198,9 +198,11 @@ margin: 10px 10px 10px 10px;
 }
 
 .product-modal-window{
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(242,241,239,0.7);
 
 }
+
+
 
 .product-modal-window .modal-dialog {
     width: 980px;
@@ -214,10 +216,14 @@ margin: 10px 10px 10px 10px;
     margin: 30px auto;
     background-color: transparent;
     padding-top: 0px;
-    overflow: hidden;
-    -webkit-box-shadow: 0px;
-    -moz-box-shadow: 0px;
-    box-shadow: 0px;
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+
+    border-width: 0px;
+
+
 }
 
 .product-modal-window .productMainDetail{
@@ -226,9 +232,6 @@ margin: 10px 10px 10px 10px;
     height: 100%;
     background-color: transparent;
     display: inline-block;
-    -webkit-box-shadow: 0px;
-    -moz-box-shadow: 0px;
-    box-shadow: 0px;
 
 }
 
@@ -245,19 +248,37 @@ margin: 10px 10px 10px 10px;
 .product-modal-window .productdetails .productOtherImages{
 
     width: 100%;
-    height: 114px;
-    background-color: yellow;
+    height: 102px;
+    background-color: white;
     float: left;
     border-radius: 2px;
     display: block;
+    padding-left: 4px;
+
+}
+
+.product-modal-window .productdetails .productOtherImages .otherProductImageCard {
+    width: 88px;
+    height: 88px;
+
+    float: left;
+    margin:  6px 6px 0px 6px;
+    border-radius: 2px;
+    overflow: hidden;
+
+}
+
+.product-modal-window .productdetails .productOtherImages .otherProductImageCard .otherProductImage {
+    width: 88px;
+    height: 88px;
 
 }
 
 .product-modal-window .productdetails .productDescription{
 
     width: 100%;
-    height: 114px;
-    background-color: green;
+    height: 126px;
+    background-color: white;
     float: left;
     border-radius: 2px;
     display: block;
@@ -330,10 +351,10 @@ margin: 10px 10px 10px 10px;
     color: white;
     text-align: center;
     vertical-align: middle;
+    line-height: 40px;
     display: inline-block;
     margin-left: 20px;
     margin-top: 20px;
-    line-height: 40px;
     font-style: italic;
 
 }
@@ -363,53 +384,282 @@ margin: 10px 10px 10px 10px;
 
 .product-modal-window .productStore .storeTop {
     width: 100%;
-    height: 52px;
+    height: 62px;
     display: inline-block;
-    background-color: #2aabd2;
+    background-color: white;
 
 }
 
 
 .product-modal-window .productStore .storeTop .storeIcon{
-    width: 20%;
-    height: 52px;
+    width: 42px;
+    height: 42px;
     display: inline-block;
-    margin-top: 0px;
+    margin-top: 10px;
+    margin-left: 14px;
+    margin-right: 5px;
+    float: left;
+    border-radius: 3px;
 }
 
 .product-modal-window .productStore .storeTop .storeTitle{
-     width: 30%;
+     width: 40%;
      height: 52px;
      display: inline-block;
-    background-color: cyan;
+    background-color: white;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
  }
 .product-modal-window .productStore .storeTop .storeTitle .title{
     width: 100%;
-    height: 50%;
+    height: 26px;
     display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 26px;
+    background-color: white;
+
 }
+
+
 
 .product-modal-window .productStore .storeTop .storeLikeButton{
-    width: 40%;
-    height: 52px;
+    width: 94px;
+    height: 30px;
+    margin-top: 15px;
+    margin-right: 10px;
     display: inline-block;
-    line-height: 52px;
+    line-height: 26px;
     text-align: center;
     vertical-align: middle;
-    background-color: blueviolet;
+    background-color: white;
+    color: #2aabd2;
+    border-width: 2px;
+    border-radius: 2px;
+    border-color: #2aabd2;
+    border-style: solid;
+    float: right;
 }
 
-.product-modal-window .productStore .storemiddle {
+.product-modal-window .productStore .storeMiddle {
     width: 100%;
-    height: 50%;
-    background-color: red;
+    height: 100px;
+    background-color: white;
+    display: inline-block;
+    padding-top: 0px;
+    padding-left: 3px;
+    margin:0px 0px 0px 0px;
+}
+
+.product-modal-window .productStore .storeMiddle .storeProductCard {
+    width: 88px;
+    height: 88px;
+
+    float: left;
+    margin:  6px 6px 0px 6px;
+    border-radius: 2px;
+    overflow: hidden;
+
+}
+
+.product-modal-window .productStore .storeMiddle .storeProductCard .storeProductImage {
+    width: 88px;
+    height: 88px;
+
 }
 
 .product-modal-window .productStore .storeBottom {
     width: 100%;
-    height: 53px;
+    height: 40px;
     border-top: 1px solid gainsboro;
-    background-color: yellowgreen;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    color: #2aabd2;
+}
+
+.oneStore .storeDetail{
+    width: 970px;
+    height: 470px;
+    background-color: white;
+
+}
+
+.oneStore .storeDetail .storeDetailHeader{
+    width: 970px;
+    height: 222px;
+    background-color: white;
+
+}
+
+
+.oneStore .storeDetail .storeDetailHeader img{
+    width: 970px;
+    height: 222px;
+    background-color: white;
+
+}
+
+.oneStore .storeDetail .storeDetailBottom{
+    width: 970px;
+    height: 200px;
+    display: block;
+
+}
+
+.oneStore .storeDetail .storeDetailBottom .storeDetailActions{
+    width: 970px;
+    height: 68px;
+    display: inline-block;
+    background-color: white;
+    padding-left: 10px;
+
+}
+
+.oneStore .storeDetail .storeDetailBottom .storeDetailActions .askAQuestion{
+    width: 130px;
+    height: 32px;
+    float: left;
+    display: inline-block;
+    background-color: white;
+    margin-top: 12px;
+
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+
+    border: 1px solid #2aabd2;
+    border-radius: 2px;
+
+
+}
+
+.oneStore .storeDetail .storeDetailBottom .storeDetailActions .storeIcon{
+    width: 112px;
+    height: 112px;
+    margin-left: 289px;
+    display: inline-block;
+    background-color: white;
+    margin-top: -60px;
+    border: 1px solid white;
+    border-radius: 2px;
+
+}
+
+.oneStore .storeDetail .storeDetailBottom .storeDetailActions .share{
+    width: 92px;
+    height: 32px;
+    float: right;
+    display: inline-block;
+    border: 1px solid gray;
+    background-color: white;
+    margin-top: 12px;
+    margin-right: 4px;
+
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+
+}
+
+.oneStore .storeDetail .storeDetailBottom .storeDetailActions .follow{
+    width: 138px;
+    height: 32px;
+    float: right;
+    display: inline-block;
+    border: 1px solid #2aabd2;
+    background-color: white;
+    margin-top: 12px;
+    margin-right: 4px;
+
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+
+
+}
+
+.oneStore .storeDetail .storeDetailBottom .storeDetailTitles{
+    width: 970px;
+    height: 132px;
+    display: block;
+    background-color: white;
+
+}
+.oneStore .storeDetail .storeDetailBottom .storeDetailTitles .storeName{
+    width: 970px;
+    height: 40px;
+    display: block;
+
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+
+    font-size: 24px;
+    background-color: white;
+
+}
+.oneStore .storeDetail .storeDetailBottom .storeDetailTitles .storeDescription{
+    width: 970px;
+    height: 40px;
+    display: block;
+
+    line-height: 40px;
+    text-align: center;
+    vertical-align: top;
+
+    font-size: 18px;
+
+    background-color: white;
+
+}
+
+.oneStore .storeDetail .storeDetailFooter{
+    width: 970px;
+    height: 48px;
+    display: block;
+    background-color: white;
+    border-top: 1px solid gainsboro;
+
+}
+
+.oneStore .storeDetail .storeDetailFooter .products{
+    width: 82px;
+    height: 47px;
+
+    line-height: 47px;
+    text-align: center;
+    vertical-align: top;
+    margin-left: 10px;
+    color: black;
+
+}
+
+.oneStore .productsList {
+    width: 988px;
+    height: 1000px;
+    background-color: transparent;
+    display: inline-block;
+    padding-top: 10px;
+
+}
+
+.oneStore .productsList .product4XCards{
+    float: left;
+    width: 230px;
+    height: 322px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 17px;
+    margin-top: 10px;
+    border-radius : 3px;
+    overflow: hidden;
+    position: relative;
 }
 
 
