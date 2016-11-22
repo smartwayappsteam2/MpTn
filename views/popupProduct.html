@@ -1,10 +1,43 @@
-<div class="modal-header">
-    <h3 class="modal-title">Header</h3>
-</div>
-<div class="modal-body">
-    This is Popup example with close button.
-</div>
-<div class="modal-footer">
-    <button class="btn btn-warning" type="button"
-            ng-click="close()">Cancel</button>
-</div>
+
+    <div class = "productMainDetail">
+
+        <div class="productdetails">
+            <img class="productImage" ng-src="{{product.image}}"> </img>
+            <div class="productOtherImages">
+
+            </div>
+            <div class="productDescription">
+                Description
+                <br>
+                {{product.description}}
+            </div>
+        </div>
+
+
+        <div class="productActions">
+            <h3>{{product.name}}</h3>
+            <h5>{{product.price}}</h5>
+            <div class="actionButton">Ajouter Panier</div>
+            <div class="separator"></div>
+            <div class="buttons">
+                 <div class="button">Like</div>
+                 <div class="button">share</div>
+            </div>
+        </div>
+
+
+        <div class="productStore">
+            <div class= "storeTop" >
+                <img class="storeIcon" ng-src="{{product.image}}"> </img>
+                <div class="storeTitle">
+                    More From
+                </div>
+                <div class="storeLikeButton">Folow</div>
+            </div>
+
+            <div class="storeMiddle"></div>
+            <div class="storeBottom">Ask a Question</div>
+
+        </div>
+
+    </div>

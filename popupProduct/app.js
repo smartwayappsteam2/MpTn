@@ -34,8 +34,18 @@ var mpTn = angular.module('mpTn',['ngRoute','ui.bootstrap']).config(['$routeProv
 
 }]);
 
-mpTn.controller('homeCtrl', function($scope) {
 
+    mpTn.controller('homeCtrl',['$scope','$uibModal', function($scope,$uibModal) {
+
+        $scope.showProduct = function () {
+        var modalInstance = $uibModal.open({
+
+            templateUrl: 'views/popupProduct.html',
+
+            controller: 'popupProductCtrl'
+        });
+
+    };
     $scope.products=[
 
 
@@ -61,7 +71,7 @@ mpTn.controller('homeCtrl', function($scope) {
         }
     ]
 
-});
+}]);
 
 
 mpTn.controller('loginCtrl', function($scope) {
@@ -77,12 +87,14 @@ mpTn.controller('lien1Ctrl', function($scope) {
 });
     mpTn.controller('productsCtrl',['$scope','$uibModal','$routeParams', function($scope,$uibModal,$routeParams) {
 
+
     $scope.showProduct = function () {
         var modalInstance = $uibModal.open({
 
             templateUrl: 'views/popupProduct.html',
 
-            controllerAs: 'popupProductCtrl'
+            controller: 'popupProductCtrl',
+            windowClass: 'product-modal-window'
         });
 
     };
@@ -162,8 +174,14 @@ mpTn.controller('storesCtrl',['$scope', function($scope) {
     }]);
 
 
-mpTn.controller('popupProductCtrl', ['$scope','$modalInstance',function ($scope, $modalInstance) {
+mpTn.controller('popupProductCtrl', ['$scope','$uibModalInstance',function ($scope, $uibModalInstance) {
+    $scope.product =  {
+        image:"https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg",
+        name:"cat1",
+        description:"Le meilleur Produit 2016",
+        price:"$2OO"
+    },
     $scope.close = function () {
-        $modalInstance.dismiss('cancel');
+        $uibModalInstance.close('cancel');
     };
 }]);

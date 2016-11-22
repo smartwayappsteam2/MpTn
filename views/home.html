@@ -1,0 +1,39 @@
+<div class="home" >
+    <div class="col-sm-2">
+        <div ng-include = "'views/leftMenu.html'"></div>
+    </div>
+
+    <div class="col-sm-8 productsGrid">
+        <div  ng-repeat="product in products">
+            <div ng-if="$index % 3 == 0 ">
+                <div class="product1XCards large" ng-click="showProduct()">
+                    <img class="productImg" ng-src="{{product.image }}">
+                    <h6>{{product.name}}</h6>
+                    <div class="price">
+                        $100
+                    </div>
+                    <div class="separator"></div>
+                    <div class="likeButton"> Liked </div>
+
+
+                </div>
+            </div>
+            <div ng-if="$index % 3 != 0 ">
+                <div class="product2XCards small" ng-click="showProduct()">
+                    <img class="productImg" ng-src="{{product.image }}">
+                    <h6>{{product.name}}</h6>
+                    <div class="price"> $100 </div>
+                    <div class="separator"></div>
+                    <div class="likeButton"> Like </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+        <div ng-include = "'views/leftMenu.html'"></div>
+    </div>
+
+</div>

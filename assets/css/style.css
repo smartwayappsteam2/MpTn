@@ -1,0 +1,424 @@
+.app {
+    background-color: #ebeced;
+}
+
+.productsGrid h6{
+    float: left;
+color: black;
+margin: 10px 10px 10px 10px;
+    font-size: 16px;
+    font-family: 'lucida'
+}
+
+.product1XCards{
+    float: left;
+    width: 640px;
+    height: 738px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 7px;
+    margin-right: 8px;
+    margin-top: 10px;
+    border-radius : 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product1XCards .productImg{
+    width: 640px;
+    height: 640px;
+}
+
+.price{
+    float: right;
+    color: #2aabd2;
+    border-color: #2aabd2;
+    border-style: solid;
+    border-width:1px;
+    border-radius: 2px;
+    font-size: 12px;
+    text-align: center;
+    display: inline-block;
+    padding: 0px 10px 0px 10px ;
+    margin: 10px 10px 10px 10px;
+}
+
+ .likeButton{
+
+    color: gray;
+    border-color: #2aabd2;
+    border-style: solid;
+    border-width:1px;
+    border-radius: 2px;
+    font-size: 12px;
+    text-align: center;
+    display: inline-block;
+    padding: 0px 10px 0px 10px ;
+    margin: 10px 10px 10px 10px;
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+}
+.large .separator{
+    position: absolute;
+    bottom: 5%;
+    width: 94%;
+    align-self: center;
+    height: 1px;
+    left: 3%;
+    background-color: #2b2d2f;
+    border-bottom: 1px solid gainsboro;
+
+}
+
+.small .separator{
+    position: absolute;
+    bottom: 9%;
+    width: 94%;
+    align-self: center;
+    height: 1px;
+    left: 3%;
+    background-color: #2b2d2f;
+    border-bottom: 1px solid gainsboro;
+
+}
+
+.xSmall .separator{
+    position: absolute;
+    bottom: 14%;
+    width: 94%;
+    align-self: center;
+    height: 1px;
+    left: 3%;
+    background-color: #2b2d2f;
+    border-bottom: 1px solid gainsboro;
+
+}
+.product2XCards{
+    float: left;
+    width: 313px;
+    height: 405px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 7px;
+    margin-right: 8px;
+    margin-top: 10px;
+    border-radius : 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product2XCards .productImg{
+    width: 313px;
+    height: 313px;
+}
+.product4XCards{
+    float: left;
+    width: 230px;
+    height: 322px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 7px;
+    margin-right: 8px;
+    margin-top: 10px;
+    border-radius : 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product4XCards .productImg{
+    width: 230px;
+    height: 230px;
+}
+
+
+.store2XCards{
+    float: left;
+    width: 313px;
+    height: 405px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 7px;
+    margin-right: 8px;
+    margin-top: 10px;
+    border-radius : 3px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+
+
+.store2XCards .headerImg{
+    width: 100%;
+    height: 30%;
+
+}
+
+.store2XCards .iconImg{
+
+    width: 82px;
+    height: 82px;
+    margin-left: 115px;
+   margin-top: -20px;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+
+.viewStore{
+    width: 50%;
+    color: gray;
+    border-color: #2aabd2;
+    border-style: solid;
+    border-width:1px;
+    border-radius: 2px;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 0px 10px 0px 10px ;
+    margin: auto;
+    bottom: 10px;
+    left: 25%;
+    display: block;
+    position: absolute;
+}
+
+.store2XCards h3{
+    width : auto;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.store2XCards h9{
+    width : auto;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    color: gainsboro;
+}
+
+.product-modal-window{
+    background-color: rgba(255,255,255,0.4);
+
+}
+
+.product-modal-window .modal-dialog {
+    width: 980px;
+    height: 880px;
+        margin: 30px auto;
+    background-color: transparent;
+    }
+.product-modal-window .modal-content {
+    width: 980px;
+    height: 880px;
+    margin: 30px auto;
+    background-color: transparent;
+    padding-top: 0px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px;
+    -moz-box-shadow: 0px;
+    box-shadow: 0px;
+}
+
+.product-modal-window .productMainDetail{
+
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: inline-block;
+    -webkit-box-shadow: 0px;
+    -moz-box-shadow: 0px;
+    box-shadow: 0px;
+
+}
+
+.product-modal-window .productdetails{
+
+    width: 652px;
+    height: 880px;
+    background-color: #1f7e9a;
+    float: left;
+    border-radius: 2px;
+    display: block;
+}
+
+.product-modal-window .productdetails .productOtherImages{
+
+    width: 100%;
+    height: 114px;
+    background-color: yellow;
+    float: left;
+    border-radius: 2px;
+    display: block;
+
+}
+
+.product-modal-window .productdetails .productDescription{
+
+    width: 100%;
+    height: 114px;
+    background-color: green;
+    float: left;
+    border-radius: 2px;
+    display: block;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.product-modal-window .productActions{
+
+    width: 306px;
+    height: 222px;
+    background-color:white;
+    float: right;
+    border-radius: 2px;
+    margin-bottom: 11px;
+    display: block;
+
+}
+.product-modal-window .productActions h3 {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.product-modal-window .productActions h5 {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+.product-modal-window .productActions .separator {
+
+    width: 100%;
+    align-self: center;
+    height: 1px;
+    margin-top: 20px;
+    background-color: #2b2d2f;
+    border-bottom: 1px solid gainsboro;
+
+}
+
+.product-modal-window .productActions .buttons{
+
+    width: 100%;
+    height: 50px;
+    background-color: crimson;
+    display: inline-block;
+
+}
+
+.product-modal-window .productActions .button{
+
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    float: left;
+    border-right: 1px solid gainsboro;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.product-modal-window .productActions .actionButton {
+    width: 266px;
+    height: 40px;
+    background-color: #2d672d;
+    border-radius: 2px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 40px;
+    font-style: italic;
+
+}
+
+
+
+
+.product-modal-window .productdetails .productImage{
+
+    width: 652px;
+    height: 652px;
+    background-color: transparent;
+    display: inline-block;
+
+}
+
+.product-modal-window .productStore{
+
+    width: 306px;
+    height: 214px;
+    background-color:white;
+    float: right;
+    border-radius: 2px;
+    margin-top: 11px;
+    display: block;
+}
+
+.product-modal-window .productStore .storeTop {
+    width: 100%;
+    height: 52px;
+    display: inline-block;
+    background-color: #2aabd2;
+
+}
+
+
+.product-modal-window .productStore .storeTop .storeIcon{
+    width: 20%;
+    height: 52px;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+.product-modal-window .productStore .storeTop .storeTitle{
+     width: 30%;
+     height: 52px;
+     display: inline-block;
+    background-color: cyan;
+ }
+.product-modal-window .productStore .storeTop .storeTitle .title{
+    width: 100%;
+    height: 50%;
+    display: inline-block;
+}
+
+.product-modal-window .productStore .storeTop .storeLikeButton{
+    width: 40%;
+    height: 52px;
+    display: inline-block;
+    line-height: 52px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: blueviolet;
+}
+
+.product-modal-window .productStore .storemiddle {
+    width: 100%;
+    height: 50%;
+    background-color: red;
+}
+
+.product-modal-window .productStore .storeBottom {
+    width: 100%;
+    height: 53px;
+    border-top: 1px solid gainsboro;
+    background-color: yellowgreen;
+}
+
+
+.home {
+    background-color: #ebeced;
+
+}
+
+@font-face {
+    font-family: 'lucida'; /*a name to be used later*/
+    src: url('lucida-grande.ttf'); /*URL to font*/
+}
