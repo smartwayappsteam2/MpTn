@@ -1,4 +1,6 @@
-var mpTn = angular.module('mpTn', ['ngRoute', 'ui.bootstrap']).config(['$routeProvider', function ($routeProvider) {
+var mpTn = angular.module('mpTn', ['ngRoute', 'ui.bootstrap', 'firebase'])
+    .constant('FIREBASE_URI', 'https://gallerie-d306d.firebaseio.com/')
+    .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/login', {
             templateUrl: 'views/login.html',
@@ -27,6 +29,14 @@ var mpTn = angular.module('mpTn', ['ngRoute', 'ui.bootstrap']).config(['$routePr
         .when('/stores', {
             templateUrl: 'views/stores.html',
             controller: 'storesCtrl'
+        })
+        .when('/addProduct', {
+            templateUrl: 'views/addProduct.html',
+            controller: 'addProductCTRL'
+        })
+        .when('/addStore', {
+            templateUrl: 'views/addStore.html',
+            controller: 'addStoreCTRL'
         })
         .otherwise({
             redirectTo: '/home'

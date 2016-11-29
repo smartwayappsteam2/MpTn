@@ -1,12 +1,8 @@
 /**
  * Created by younesahmed on 22/11/2016.
  */
+mpTn.controller('loginCtrl', function ($scope) {
 
-mpTn.controller('loginCtrl', ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
+    $scope.message = 'Test2';
 
-
-    $scope.close = function () {
-        $uibModalInstance.close('cancel');
-    };
-}]);
-
+});

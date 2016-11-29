@@ -4,9 +4,9 @@
     </div>
 
     <div class="col-sm-10 productsGrid">
-        <div class="product4XCards xSmall" ng-repeat="product in products" ng-click="showProduct()">
-            <img class="productImg" ng-src="{{product.image }}">
-            <h6>{{product.name}}</h6>
+        <div class="product4XCards xSmall" ng-repeat="product in products" ng-click="showProduct($index)">
+            <img class="productImg" ng-src="{{product.mainImageUrl }}">
+            <h6>{{product.title}}</h6>
             <div class="price"> $100 </div>
             <div class="separator"></div>
             <div class="likeButton"> Like </div>
