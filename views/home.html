@@ -6,9 +6,9 @@
     <div class="col-sm-8 col-md-8 col-lg-8 productsGrid">
         <div  ng-repeat="product in products">
             <div ng-if="$index % 3 == 0 ">
-                <div class="product1XCards large" ng-click="showProduct()">
-                    <img class="productImg" ng-src="{{product.image }}">
-                    <h6>{{product.name}}</h6>
+                <div class="product1XCards large" ng-click="showProduct($index)">
+                    <img class="productImg" ng-src="{{product.mainImageUrl }}">
+                    <h6>{{product.title}}</h6>
                     <div class="price">
                         $100
                     </div>
@@ -19,9 +19,9 @@
                 </div>
             </div>
             <div ng-if="$index % 3 != 0 ">
-                <div class="product2XCards small" ng-click="showProduct()">
-                    <img class="productImg" ng-src="{{product.image }}">
-                    <h6>{{product.name}}</h6>
+                <div class="product2XCards small" ng-click="showProduct($index)">
+                    <img class="productImg" ng-src="{{product.mainImageUrl }}">
+                    <h6>{{product.title}}</h6>
                     <div class="price"> $100 </div>
                     <div class="separator"></div>
                     <div class="likeButton"> Like </div>

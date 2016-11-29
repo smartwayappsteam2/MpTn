@@ -2,7 +2,7 @@
     <div class = "productMainDetail">
 
         <div class="productdetails">
-            <img class="productImage" ng-src="{{product.image}}"> </img>
+            <img class="productImage" ng-src="{{product.mainImageUrl}}"> </img>
             <div class="productOtherImages">
                 <div class="otherProductImageCard" ng-repeat="image in product.images">
                     <img class="otherProductImage" ng-src="{{image.imageUrl}}"> </img>
@@ -12,13 +12,14 @@
                 Description
                 <br>
                 {{product.description}}
+
             </div>
         </div>
 
 
         <div class="productActions">
-            <h3>{{product.name}}</h3>
-            <h5>{{product.price}}</h5>
+            <h3>{{product.title}}</h3>
+            <h5>{{product.prix}}</h5>
             <div class="actionButton">Ajouter Panier</div>
             <div class="separator"></div>
             <div class="buttons">
@@ -30,17 +31,17 @@
 
         <div class="productStore">
             <div class= "storeTop" >
-                <img class="storeIcon" ng-src="{{product.image}}"> </img>
+                <img class="storeIcon" ng-src="{{store.mainImageUrl}}"> </img>
                 <div class="storeTitle">
                     <div class="title">More From</div>
-                    <div class="title">HUF</div>
+                    <div class="title">{{store.title}}</div>
                 </div>
-                <div class="storeLikeButton">Folow</div>
+                <div class="storeLikeButton" ng-click="showStore()">Visiter</div>
             </div>
 
             <div class="storeMiddle">
-            <div class="storeProductCard" ng-repeat="aProduct in store.products">
-                <img class="storeProductImage" ng-src="{{aProduct.image}}"> </img>
+            <div class="storeProductCard" ng-repeat="aProduct in store3Products" ng-click="showProduct($index)">
+                <img class="storeProductImage" ng-src="{{aProduct.mainImageUrl}}"> </img>
             </div>
             </div>
 

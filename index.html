@@ -18,6 +18,12 @@
     <script src="assets/lib/js/bootstrap.min.js"></script>
     <script src="assets/js/ui-bootstrap-tpls-2.2.0.min.js"></script>
 
+    <!-- firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"> </script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"> </script>
+
+
     <!-- App -->
     <script src="app/app.js"></script>
 
@@ -29,7 +35,13 @@
     <script src="app/controllers/storeCtrl.js"></script>
     <script src="app/controllers/storesCtrl.js"></script>
     <script src="app/controllers/popupProductCtrl.js"></script>
+    <script src="app/controllers/addProductCTRL.js"></script>
+    <script src="app/controllers/addStoreCTRL.js"></script>
     <script src="app/controllers/navBarCtrl.js"></script>
+
+    <!-- Services -->
+    <script src="app/services/syncProductsSvc.js"></script>
+    <script src="app/services/syncStoresSvc.js"></script>
 
 </head>
 <body class="app" ng-app="mpTn">
@@ -62,12 +74,12 @@
         </a></li>
         <li><a href="#"></a></li>
     </ul>
-    </div>
+
 
 </nav>
 
 
-<div ng-view></div>
+<div class="mainView" ng-view></div>
 
 </body>
 </html>

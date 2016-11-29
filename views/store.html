@@ -6,7 +6,7 @@
     <div class="col-sm-10">
         <div class="storeDetail">
             <div class="storeDetailHeader">
-                <img ng-src="{{store.headerImg}}"> </img>
+                <img ng-src="{{store.mainImageUrl}}"> </img>
             </div>
             <div class="storeDetailBottom">
 
@@ -14,7 +14,7 @@
                     <div class="askAQuestion">
                         ASK A QUESTION
                     </div>
-                    <img class="storeIcon" ng-src="{{store.iconImg}}">
+                    <img class="storeIcon" ng-src="{{store.mainImageUrl}}">
 
                     </img>
 
@@ -31,7 +31,7 @@
 
                 <div class="storeDetailTitles">
                     <div class="storeName">
-                        {{store.name}}
+                        {{store.title}}
                     </div>
                     <div class="storeDescription">
                         {{store.description}}
@@ -45,9 +45,9 @@
         </div>
 
         <div class="productsList">
-            <div class="product4XCards xSmall" ng-repeat="product in products" ng-click="showProduct()">
-                <img class="productImg" ng-src="{{product.image }}">
-                <h6>{{product.name}}</h6>
+            <div class="product4XCards xSmall" ng-repeat="product in products" ng-click="showProduct($index)">
+                <img class="productImg" ng-src="{{product.mainImageUrl }}">
+                <h6>{{product.title}}</h6>
                 <div class="price"> $100</div>
                 <div class="separator"></div>
                 <div class="likeButton"> Like</div>

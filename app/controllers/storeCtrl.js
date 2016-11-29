@@ -2,91 +2,53 @@
  * Created by younesahmed on 22/11/2016.
  */
 
-mpTn.controller('storeCtrl', ['$scope', '$uibModal','$routeParams', function ($scope, $uibModal,$routeParams) {
+mpTn.controller('storeCtrl', ['$scope', '$uibModal','$routeParams', 'syncStoresSvc','syncProductsSvc', function ($scope, $uibModal,$routeParams,syncStoresSvc,syncProductsSvc) {
 
     $scope.message = $routeParams.storeID;
 
 
 
-    $scope.store =
-    {
+    $scope.store = syncStoresSvc.getStoreToShow()
 
-        name: "store1",
-        description: "man & woman",
-        headerImg: "https://resize-ec3.thefancy.com/resize/1924x712/thefancy/CoverImages/default/fancy_saleitemseller_50832_fb44ea15be5d.jpg",
-        iconImg: "https://resize-ec1.thefancy.com/resize/crop/220/thefancy/CoverImages/original/fancy_saleitemsellerlogo_50832_90510f884a61.jpg",
+    $scope.store3ProductsID = []
 
-        products: [{
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat6"
-        },
-            {
-                image: "https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg",
-                name: "cat1"
-            },
+    $scope.products = []
 
-            {
-                image: "https://thingd-media-ec3.thefancy.com/default/1289677788151808885_5efc48efe25d.jpg",
-                name: "cat2"
-            },  {
-                image: "https://thingd-media-ec3.thefancy.com/default/1289677788151808885_5efc48efe25d.jpg",
-                name: "cat2"
-            }]
-    }
 
-    $scope.products = [
-        {
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat4"
-        },
-        {
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat5"
-        },
 
-        {
-            image: "https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg",
-            name: "cat1"
-        },
+    for( key in $scope.store.products ){
+        console.log(key)
+        $scope.store3ProductsID.push(key)
+    };
+    var index = 0
+    for( key in $scope.store3ProductsID ){
+        productID = ''+$scope.store3ProductsID[key]
+        var product = syncProductsSvc.getProductWithID(productID)
+        console.log(productID)
+        $scope.products.push(product)
 
-        {
-            image: "https://thingd-media-ec3.thefancy.com/default/1289677788151808885_5efc48efe25d.jpg",
-            name: "cat2"
-        },
-
-        {
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat3"
-        },
-        {
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat4"
-        },
-        {
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat5"
-        },
-        {
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat6"
-        }, {
-            image: "https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg",
-            name: "cat1"
-        },
-
-        {
-            image: "https://thingd-media-ec3.thefancy.com/default/1289677788151808885_5efc48efe25d.jpg",
-            name: "cat2"
+        index++
+        if(index == 3){
+            break
         }
-    ]
 
-    $scope.showProduct = function () {
+    };
+
+
+    $scope.showProduct = function (index) {
         var modalInstance = $uibModal.open({
 
             templateUrl: 'views/popupProduct.html',
             controller: 'popupProductCtrl',
-            windowClass: 'product-modal-window'
+            windowClass: 'product-modal-window',
+            resolve: {
+                productToSHow: function () {
+                    return $scope.products[index];
+                }
+            }
         });
 
     };
+
+
 }]);

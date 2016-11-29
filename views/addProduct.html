@@ -1,0 +1,20 @@
+<form>
+  <div class="form-group">
+        <label for="name">product Name</label>
+        <input type="text" class="form-control" id="name" ng-model="product.title" placeholder=""> </div>
+
+    <label for="name">product Description</label>
+    <input type="text" class="form-control" id="desc" ng-model="product.description" placeholder=""> </div>
+
+    <label for="name">product storeID</label>
+    <input type="text" class="form-control" id="sotreID" ng-model="product.storeID" placeholder=""> </div>
+
+    <label for="name">product mainImageUrl</label>
+    <input type="text" class="form-control" id="image" ng-model="product.mainImageUrl" placeholder=""> </div>
+
+    <label for="name">product price</label>
+    <input type="number" class="form-control" id="price" ng-model="product.prix" placeholder=""> </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="addTheProduct()">env</button>
+</form>
+name  {{message}} {{product.title}}

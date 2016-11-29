@@ -2,45 +2,66 @@
  * Created by younesahmed on 22/11/2016.
  */
 
-mpTn.controller('popupProductCtrl', ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
-    $scope.product = {
-        image: "https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg",
-        name: "cat1",
-        description: "Le meilleur Produit 2016",
-        price: "$2OO",
-        images:[
-            {imageUrl:"https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg"},
-            {imageUrl:"https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg"},
-            {imageUrl:"https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg"},
-            {imageUrl:"https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg"},
-            {imageUrl:"https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg"},
-            {imageUrl:"https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg"}
-        ],
-        storeID:""
+mpTn.controller('popupProductCtrl', ['$scope','$location', '$uibModalInstance','productToSHow','syncStoresSvc','syncProductsSvc', function ($scope,$location, $uibModalInstance,productToSHow, syncStoresSvc,syncProductsSvc) {
+    $scope.product = productToSHow;
+    
+    
+
+    $scope.store3ProductsID = []
+    $scope.store3Products = []
+
+    $scope.getStore = function () {
+        $scope.store = syncStoresSvc.getStoreWithID($scope.product.storeID)
+
+        $scope.store.$loaded() .then(function (item) {
+                for( key in $scope.store.products ){
+                    console.log(key);
+                    console.log($scope.product.$id)
+                    if(key != $scope.product.$id){
+                        $scope.store3ProductsID.push(key)
+                    }
+
+                };
+                var index = 0
+                for( key in $scope.store3ProductsID ){
+                    productID = ''+$scope.store3ProductsID[key]
+                    var product = syncProductsSvc.getProductWithID(productID)
+                    console.log(productID)
+                    $scope.store3Products.push(product)
+
+                    index++
+                    if(index == 3){
+                        break
+                    }
+
+                };
+            })
+            .catch(function(error) {
+                console.log("Error:", error);
+            });
+
+
     }
 
-    $scope.store =
-    {
+    $scope.getStore()
 
-        name: "store1",
-        description: "man & woman",
-        headerImg: "https://resize-ec3.thefancy.com/resize/î1924x712/thefancy/CoverImages/default/fancy_saleitemseller_50832_fb44ea15be5d.jpg",
-        iconImg: "https://resize-ec1.thefancy.com/resize/crop/220/thefancy/CoverImages/original/fancy_saleitemsellerlogo_50832_90510f884a61.jpg",
+    $scope.showStore = function () {
+        $uibModalInstance.close('cancel');
+        syncStoresSvc.setStoreToShow($scope.store)
 
-        products: [{
-            image: "http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg",
-            name: "cat6"
-        },
-            {
-                image: "https://thingd-media-ec4.thefancy.com/default/1264361306236912735_33e71e370a07.jpg",
-                name: "cat1"
-            },
-
-            {
-                image: "https://thingd-media-ec3.thefancy.com/default/1289677788151808885_5efc48efe25d.jpg",
-                name: "cat2"
-            }]
+        var storeID = $scope.store.storeID
+        $location.path ('/store/').search({storeID:storeID});
     }
+
+    $scope.showProduct = function (index) {
+        $scope.product = $scope.store3Products[index]
+        $scope.store3ProductsID = []
+        $scope.store3Products = []
+
+        $scope.getStore()
+
+    }
+
     $scope.close = function () {
         $uibModalInstance.close('cancel');
     };

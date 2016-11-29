@@ -2,6 +2,11 @@
     background-color: #ebeced;
 }
 
+
+
+.mainView {
+    margin-top: 70px;
+}
 .fa {
     font-size: 12px;
 }
@@ -671,7 +676,8 @@ ul {
     overflow: hidden;
     position: relative;
 }
-.login{
+
+.login {
 
     width: 280px;
     height: 290px;
