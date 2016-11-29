@@ -3,7 +3,7 @@
  */
 mpTn.controller('navBarCtrl', ['$scope', '$uibModal', function ($scope, $uibModal) {
 
-    $scope.showProduct2 = function () {
+    $scope.showLogin = function () {
         var modalInstance = $uibModal.open({
 
             templateUrl: 'views/login.html',
