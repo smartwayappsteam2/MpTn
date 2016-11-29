@@ -4,14 +4,12 @@
     <title>Bootstrap Case</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!-- css Library -->
-    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/lib/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/lib/css/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="css/style.css">
-
-
-
 
     <!-- app Library -->
     <script src="assets/lib/js/angular.js"></script>
@@ -29,7 +27,6 @@
     <!-- App -->
     <script src="app/app.js"></script>
 
-
     <!-- Controllers -->
     <script src="app/controllers/homeCtrl.js"></script>
     <script src="app/controllers/loginCtrl.js"></script>
@@ -40,24 +37,49 @@
     <script src="app/controllers/popupProductCtrl.js"></script>
     <script src="app/controllers/addProductCTRL.js"></script>
     <script src="app/controllers/addStoreCTRL.js"></script>
+    <script src="app/controllers/navBarCtrl.js"></script>
 
     <!-- Services -->
     <script src="app/services/syncProductsSvc.js"></script>
     <script src="app/services/syncStoresSvc.js"></script>
 
 </head>
-<body  class="app" ng-app="mpTn">
+<body class="app" ng-app="mpTn">
 
-<nav class="navbar  navbar-default">
-    <div class="navbar-header">
-  <a class="navbar-brand"><a href="#home" style="position: absolute;left: 45%;right: 50px">Market Place
-                Tunisia</a>
-</a>
-</div>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="">
+
+    <ul class="nav navbar-nav navbar-left">
+        <div class="collapse navbar-collapse">
+            <div class="navbar-form " role="search" style="    position: relative;">
+                <input type="text" class="form-control" placeholder="Search MpTn"
+                       style="text-align: center;background-color:#ebeced"/>
+                <i class="glyphicon glyphicon-search" style="position:absolute;padding: 10px;"></i>
+            </div>
+
+        </div>
+    </ul>
+
+
+    <ul class="navbar-header navbar-center" >
+        <a class="navbar-brand"  href="#home"  style="margin-left: 350px">Marketplace Tunisia</a>
+    </ul>
+
+
+
+    <ul class="nav navbar-nav navbar-right" ng-controller="navBarCtrl">
+        <li><a href="#">Rejoignez</a></li>
+        <li><a href="#" ng-click="showLogin()">Log In</a></li>
+        <li><a href="#"><i class="fa fa-shopping-cart fa-5x" style="font-size: 21px;"></i>
+        </a></li>
+        <li><a href="#"></a></li>
+    </ul>
+
 
 </nav>
 
-    <div ng-view></div>
+
+<div class="mainView" ng-view></div>
 
 </body>
 </html>
