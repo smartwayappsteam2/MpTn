@@ -6,9 +6,9 @@
             
 
             <div class="default">
-                <button class="btn-fb btn-wide facebook" next="/">Log in with Facebook</button>
-                <button class="btn-gg btn-left google" id="fancy-g-signin" data-backend="google" data-type="signin" next="/" data-gapiattached="true">Google+</button>
-                <button class="btn-tw btn-right twitter" data-backend="twitter" data-type="signin" next="/">Twitter</button>
+                <button class="btn-fb btn-wide facebook" next="/" ng-click="loginWithProvider('facebook')">Log in with Facebook</button>
+                <button class="btn-gg btn-left google" id="fancy-g-signin" data-backend="google" data-type="signin" next="/" data-gapiattached="true" ng-click="loginWithProvider('google')">Google+</button>
+                <button class="btn-tw btn-right twitter" data-backend="twitter" data-type="signin" next="/" ng-click="loginWithProvider('twitter')">Twitter</button>
             </div>
             <div class="more">
                 <button class="btn-w btn-left social weibo" data-backend="weibo" data-type="signin" next="/"><b>Weibo</b></button>
@@ -22,18 +22,19 @@
         <form>
             <fieldset class="email-frm">
                 <span class="hastext">
-                    <input type="text" class="text" name="username" placeholder="Adresse email">
+                    <input type="text" class="text" name="username" placeholder="Adresse email" ng-model="user.email">
                     <small class="msg"></small>
                 </span>
                 <span class="">
-                    <input type="password" class="text" name="user_password" placeholder="Mot de passe">
+                    <input type="password" class="text" name="user_password" placeholder="Mot de passe" ng-model="user.password">
                     <small class="msg"></small>
                     <a href="#" class="forgot_pw">? <small>Mot de passe oublié?</small></a>
                 </span>
-                <button class="btn btn-signin">Log In</button>
+                <button class="btn btn-signin" ng-click="login(user)">Log In</button>
                 <input type="hidden" class="next_url" value="/">
             </fieldset>
         </form>
+
         <div class="others">
             <a href="#" onclick="$(this).closest('.sign-wrap').find('.sns').toggleClass('more');if($(this).closest('.sign-wrap').find('.sns').hasClass('more')){$(this).text('Plus de réseaux sociaux');}else{$(this).text('Plus de réseaux sociaux');}">Plus de réseaux sociaux</a><br>
             New to Fancy? <a class="signup" href="/signup?next=/">Sign up now</a>

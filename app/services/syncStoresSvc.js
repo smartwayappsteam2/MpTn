@@ -2,7 +2,7 @@
  * Created by taxiweb on 24/11/2016.
  */
 
-mpTn.factory('syncStoresSvc', ['FIREBASE_URI', '$firebaseArray','$firebaseObject', function (FIREBASE_URI, $firebaseArray,$firebaseObject) {
+mpTn.factory('syncStoresSvc', ['FIREBASE_URI', '$firebaseArray','$firebaseObject', 'firebaseDataService', function (FIREBASE_URI, $firebaseArray,$firebaseObject, firebaseDataService) {
 
     var Store = function() {
         this.title = "";
@@ -15,9 +15,10 @@ mpTn.factory('syncStoresSvc', ['FIREBASE_URI', '$firebaseArray','$firebaseObject
 
     var storeToShow = new Store()
 
-    var storesUri = FIREBASE_URI + '/stores';
-    var ref = new Firebase(storesUri);
-    var stores = $firebaseArray(ref);
+
+    var ref = firebaseDataService.stores
+
+    var stores = $firebaseArray(firebaseDataService.stores);
 
     var getStores = function () {
         return stores;

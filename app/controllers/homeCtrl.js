@@ -22,5 +22,8 @@ mpTn.controller('homeCtrl', ['$scope', '$uibModal', 'syncProductsSvc', function 
     };
     
 
+    likeOrDislikProduct = function () {
+        
+    }
 
 }]);
