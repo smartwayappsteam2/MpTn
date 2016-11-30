@@ -12,16 +12,37 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- app Library -->
-    <script src="assets/lib/js/angular.js"></script>
-    <script src="assets/lib/js/angular-route.js"></script>
-    <script src="assets/lib/js/jquery.min.js"></script>
-    <script src="assets/lib/js/bootstrap.min.js"></script>
+    <!-- AngularJS -->
+
+
+
+    //////////////////////////////////////------------------
+
+    <!--Third-party JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"> </script>
     <script src="assets/js/ui-bootstrap-tpls-2.2.0.min.js"></script>
 
-    <!-- firebase -->
-    <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"> </script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"> </script>
+    <script>
+        // Initialize Firebase. Use your own config values here. This is just a sample.
+        // You can copy and paste your config values by following the instructions at
+        // https://firebase.google.com/docs/web/setup#add_firebase_to_your_app.
+        var config = {
+            apiKey: "AIzaSyDEd9NXtlsiW6havmg2gYfH3vEIA0PlYCs",
+            authDomain: "gallerie-d306d.firebaseapp.com",
+            databaseURL: "https://gallerie-d306d.firebaseio.com",
+            storageBucket: "gallerie-d306d.appspot.com"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 
 
     <!-- App -->
@@ -40,8 +61,10 @@
     <script src="app/controllers/navBarCtrl.js"></script>
 
     <!-- Services -->
+    <script src="app/services/firebaseDataService.js"></script>
     <script src="app/services/syncProductsSvc.js"></script>
     <script src="app/services/syncStoresSvc.js"></script>
+    <script src="app/services/authenticationSvc.js"></script>
 
 </head>
 <body class="app" ng-app="mpTn">
@@ -69,7 +92,9 @@
 
     <ul class="nav navbar-nav navbar-right" ng-controller="navBarCtrl">
         <li><a href="#">Rejoignez</a></li>
-        <li><a href="#" ng-click="showLogin()">Log In</a></li>
+
+        <li><a href="#" ng-click="showLogin()" ng-if = "!authenticated">Log In</a></li>
+        <li><a href="#" ng-click="logOut()" ng-if = "authenticated">Log Out</a></li>
         <li><a href="#"><i class="fa fa-shopping-cart fa-5x" style="font-size: 21px;"></i>
         </a></li>
         <li><a href="#"></a></li>
@@ -79,7 +104,7 @@
 </nav>
 
 
-<div class="mainView" ng-view></div>
+<div class="mainView" ng-view> </div>
 
 </body>
 </html>

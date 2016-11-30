@@ -2,18 +2,16 @@
  * Created by taxiweb on 24/11/2016.
  */
 
-mpTn.factory('syncProductsSvc', ['FIREBASE_URI', '$firebaseArray','$firebaseObject', function (FIREBASE_URI, $firebaseArray,$firebaseObject) {
-    var productsUri = FIREBASE_URI + '/products';
-    var ref = new Firebase(productsUri);
-
-    var products = $firebaseArray( ref);
+mpTn.factory('syncProductsSvc', ['FIREBASE_URI', '$firebaseArray','$firebaseObject', 'firebaseDataService', function (FIREBASE_URI, $firebaseArray,$firebaseObject, firebaseDataService) {
+    var ref = firebaseDataService.products
+    var products = $firebaseArray(ref);
 
     var getProducts = function () {
         return products;
     };
 
     var getProductsForCategory = function (category) {
-        return $firebaseArray( ref.orderByChild("category").equalTo(category));;
+        return $firebaseArray( ref.orderByChild("category").equalTo(category));
     };
 
     var getBestProducts = function () {
