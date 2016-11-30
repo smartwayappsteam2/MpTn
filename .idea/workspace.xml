@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a018c90d-ffc6-490b-a066-d9676825f4fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/services/authenticationSvc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/services/firebaseDataService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/NavBarCtrl.js" afterPath="$PROJECT_DIR$/app/controllers/NavBarCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/homeCtrl.js" afterPath="$PROJECT_DIR$/app/controllers/homeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/loginCtrl.js" afterPath="$PROJECT_DIR$/app/controllers/loginCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/syncProductsSvc.js" afterPath="$PROJECT_DIR$/app/services/syncProductsSvc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/syncStoresSvc.js" afterPath="$PROJECT_DIR$/app/services/syncStoresSvc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.html" afterPath="$PROJECT_DIR$/views/login.html" />
     </list>
     <ignored path="MpTn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -327,12 +318,12 @@
       <workItem from="1480435033022" duration="779000" />
       <workItem from="1480442569328" duration="2034000" />
       <workItem from="1480494165922" duration="10040000" />
-      <workItem from="1480511716847" duration="4093000" />
+      <workItem from="1480511716847" duration="4264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122150000" />
+    <option name="totallyTimeSpent" value="122321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="189" y="23" width="1280" height="709" extended-state="0" />
